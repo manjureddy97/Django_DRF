@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from quickstart import views
 
 urlpatterns = [
-    path('',  include('quickstart.urls')),
+    # path('admin/',  include('quickstart.urls')),
+    
     path('admin/',  admin.site.urls),
+    path('api/',  views.Studentlist.as_view()),
+    path('add/',  views.Studentcreate.as_view()),
+    path('display/<int:pk>/',  views.Studentretrive.as_view()),
+    path('update/<int:pk>/',  views.Studentupdate.as_view()),
+    path('delete/<int:pk>/',  views.Studentdelete.as_view()),
 ]
