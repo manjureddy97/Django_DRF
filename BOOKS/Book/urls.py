@@ -4,5 +4,8 @@ from .views import *
 
 urlpatterns = [
     path('', Booklist),
+    path('add/',CreateBook),
+    path('update/<int:id>/',UpdateBook),
+    path('delete/<int:id>/',DeleteBook),
    
 ]
